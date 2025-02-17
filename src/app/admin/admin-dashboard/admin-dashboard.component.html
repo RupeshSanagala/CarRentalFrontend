@@ -1,0 +1,37 @@
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/admin">Admin Panel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="adminNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/cars" routerLinkActive="active">Manage Cars</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/users" routerLinkActive="active">Manage Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/bookings" routerLinkActive="active">Manage Bookings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/notifications" routerLinkActive="active">Manage Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <router-outlet></router-outlet>
+  </div>
+
+<footer class="footer bg-dark text-light text-center py-3">
+  &copy; 2025 Car Rental. All rights reserved.
+</footer>

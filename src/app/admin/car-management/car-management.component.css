@@ -1,0 +1,23 @@
+h2, h3 {
+  color: #333;
+}
+
+.card {
+  border-radius: 10px;
+  background: #f8f9fa;
+}
+
+.table {
+  background: white;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.btn {
+  font-weight: bold;
+}
+
+
+  

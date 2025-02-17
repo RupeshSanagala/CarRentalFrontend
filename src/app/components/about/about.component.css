@@ -1,0 +1,230 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* General Styles */
+.about-container {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Carousel Styling */
+.aboutimg1 {
+    position: relative;
+    text-align: center;
+}
+
+.carousel-inner img {
+    border-radius: 8px;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Container Layout */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.col {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+/* About Section */
+.abouttext2 {
+    line-height: 1.6;
+    color: #444;
+}
+
+.about-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Why Choose Us */
+.home-content-center h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.home-content-center p {
+    text-align: justify;
+    font-size: 18px;
+    padding: 15px;
+    line-height: 1.6;
+}
+
+/* Card Section */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 300px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-head img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title h4 {
+    color: #333;
+    font-size: 22px;
+}
+
+.card-title p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Our Values Section */
+.value-mission {
+    text-align: center;
+}
+
+.missioncontnr {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.cardvm1, .cardvm2, .cardvm3, .cardvm4 {
+    width: 160px;
+    height: 430px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cardvm1 img, .cardvm2 img, .cardvm3 img, .cardvm4 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Reviews Section */
+.reviews {
+    padding: 20px;
+}
+
+.reviews h3 {
+    text-align: center;
+}
+
+.container11 .card {
+    display: flex;
+    margin: auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.container11 .card:hover {
+    transform: scale(1.03);
+}
+
+.card-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+.checked {
+    color: orange;
+}
+
+/* Locations */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cardLc {
+    width: 250px;
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.cardLc:hover {
+    transform: scale(1.05);
+}
+
+.cardLc img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cardLc h4 {
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .missioncontnr {
+        flex-direction: column;
+        align-items: center;
+    }
+}

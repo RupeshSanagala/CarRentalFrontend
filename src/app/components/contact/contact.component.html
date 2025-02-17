@@ -1,0 +1,45 @@
+
+
+<mat-card class="contact-container">
+    <mat-card-title style="text-align: center; margin-bottom: 20px;"><strong>Contact Us</strong></mat-card-title>
+    
+    
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="full_Name">
+        <mat-error *ngIf="contactForm.get('full_Name')?.invalid">
+          {{ getErrorMessage('fname') }}
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+        <mat-error *ngIf="contactForm.get('email')?.invalid">
+          {{ getErrorMessage('email') }}
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput type="tel" formControlName="phoneNumber">
+        <mat-error *ngIf="contactForm.get('phoneNumber')?.invalid">
+          {{ getErrorMessage('mobile') }}
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message"></textarea>
+        <mat-error *ngIf="contactForm.get('message')?.invalid">
+          {{ getErrorMessage('message') }}
+        </mat-error>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">
+        Submit
+      </button>
+    </form>
+  </mat-card>
+

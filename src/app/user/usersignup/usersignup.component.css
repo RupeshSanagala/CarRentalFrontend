@@ -1,0 +1,133 @@
+/* Full-page background image */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: url('https://www.travelperk.com/wp-content/uploads/car-rental-companies-1-scaled.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Dark overlay to improve contrast */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    z-index: -1;
+}
+
+/* Centering the signup form */
+.signup-container {
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    color: black; /* Changed text to black */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Headings */
+.signup-container h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: black; /* Black text */
+}
+
+/* Input field styling */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black; /* Changed text to black */
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Changed border to match black text */
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.7); /* Light background for readability */
+    color: black; /* Black text */
+    transition: border 0.3s, background 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border: 1px solid #007bff;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Signup button */
+.signup-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #007bff;
+    color: white; /* Ensure text remains readable */
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.signup-btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.signup-btn:disabled {
+    background: rgb(79, 90, 187);
+    cursor: not-allowed;
+}
+
+/* Login text */
+.login-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .signup-container {
+        width: 90%;
+        padding: 20px;
+    }
+}

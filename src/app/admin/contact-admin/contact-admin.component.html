@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Contact Requests</h2>
+  <div *ngIf="isLoading" class="loading">Loading contacts...</div>
+
+  <table *ngIf="contacts.length > 0" class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.contactId }}</td>
+        <td>{{ contact.full_Name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phoneNumber }}</td>
+        <td>{{ contact.message }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="contacts.length === 0 && !isLoading">No contacts found.</p>
+</div>

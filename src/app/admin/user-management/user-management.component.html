@@ -1,0 +1,49 @@
+<div class="container">
+  <h2 class="title"><b>User Management</b></h2>
+
+  <!-- Add User Form -->
+  <div class="add-user-card">
+    <h3>Add New User</h3>
+    <div class="form-group">
+      <!-- <input type="text" placeholder="User_ID" [(ngModel)]="newUser.userId"> -->
+      <input type="text" placeholder="Username" [(ngModel)]="newUser.username">
+      <input type="email" placeholder="Email" [(ngModel)]="newUser.email">
+      <input type="password" placeholder="Password" [(ngModel)]="newUser.password">
+      <input type="text" placeholder="Address" [(ngModel)]="newUser.address">
+      <input type="text" placeholder="phone_Number" [(ngModel)]="newUser.phone_Number">
+      
+      <button (click)="addUser()">➕ Add User</button>
+    </div>
+  </div>
+
+  <!-- User List Table -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>phoneNumber</th>
+          <th>Address</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.userId }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{user.phone_Number}}</td>
+          <td>{{user.address}}</td>
+          <td>{{ user.role }}</td>
+          <td class="action-buttons">
+            <button class="edit-btn" (click)="editUser(user)">✏️ Edit</button>
+            <button class="delete-btn" (click)="deleteUser(user.userId)">❌ Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

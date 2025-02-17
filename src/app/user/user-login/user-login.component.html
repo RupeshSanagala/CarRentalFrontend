@@ -1,0 +1,24 @@
+<div class="login-container" [class.shake]="invalidLogin">
+    <h2 style="color: rgb(8, 6, 6);">Login</h2>
+  
+    <form (ngSubmit)="login()" class="login-form">
+        <div class="input-group">
+            <label>Email:</label>
+            <input type="email" [(ngModel)]="email"  id="login-email" name="email" required placeholder="Enter your email" />
+        </div>
+  
+        <div class="input-group">
+            <label>Password:</label>
+            <input type="password" [(ngModel)]="password" id="password" name="password" required placeholder="Enter your password" />
+        </div>
+  
+        <!-- Error message with animation -->
+        <p class="error-message" *ngIf="invalidLogin">❌ Invalid email or password. Please try again.</p>
+  
+        <button type="submit"  id="loginpage"   class="login-btn">Login</button>
+  
+        <p class="register-text">Didn't have an account? <a class="register-link" routerLink="/signup">Register</a>
+        </p>
+    </form>
+  </div>
+  

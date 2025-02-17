@@ -1,0 +1,24 @@
+/* Make the app container take full height */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures it covers full screen */
+}
+
+/* Ensure content expands to push the footer down */
+.content {
+  flex: 1;
+}
+
+/* Fixed Footer */
+.footer {
+  background: hsl(210, 43%, 47%); /* Dark background */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

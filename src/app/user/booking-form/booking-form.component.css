@@ -1,0 +1,108 @@
+/* Outer container to increase width */
+.form-container {
+  max-width: 800px; /* Increased width */
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center the form and give it a modern, professional look */
+.booking-form {
+  width: 100%; /* Make form take full width of container */
+  max-width: 700px; /* Increased width */
+  padding: 25px 35px; /* Adjust padding */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add subtle hover effect */
+.booking-form:hover {
+  transform: scale(1.01);
+}
+
+/* Styling for Angular Material form fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 10px; /* Reduce spacing between fields */
+}
+
+mat-label {
+  font-weight: 600;
+  color: #444;
+}
+
+/* Input field improvements */
+input {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button group styling */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* General Button Styling */
+button.mat-raised-button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover Effects */
+button.mat-raised-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Primary Button Style */
+button[color="primary"] {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+}
+
+/* Cancel Button Style */
+button[color="warn"] {
+  background: linear-gradient(135deg, #ff4b5c, #c71f37);
+  color: white;
+  border: none;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 900px) {
+  .form-container {
+    max-width: 90%;
+  }
+
+  .booking-form {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

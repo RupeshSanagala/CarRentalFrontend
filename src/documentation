@@ -1,0 +1,6 @@
+ng generate module admin --routing
+ng generate component admin/admin-dashboard
+ng generate component admin/car-management
+ng generate component admin/booking-management
+ng generate component admin/user-management
+ng generate component admin/content-management

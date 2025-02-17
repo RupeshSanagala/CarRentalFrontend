@@ -1,0 +1,45 @@
+<!-- Category Filter -->
+<div fxLayout="row" fxLayoutGap="40px" fxLayoutAlign="start center" style="gap: 15px;">
+  <!-- Category Filter -->
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select [(ngModel)]="selectedCategory" (selectionChange)="applyFilters()">
+      <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Location Filter -->
+  <mat-form-field appearance="fill">
+    <mat-label>Location</mat-label>
+    <mat-select [(ngModel)]="selectedLocation" (selectionChange)="applyFilters()">
+      <mat-option *ngFor="let location of locations" [value]="location">{{ location }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Price Range Filter -->
+  <mat-form-field appearance="fill">
+    <mat-label>Max Price</mat-label>
+    <input matInput type="number" [(ngModel)]="selectedPrice" (change)="applyFilters()">
+  </mat-form-field>
+
+  <!-- Buttons -->
+  <button mat-button style="color: white; margin-left: 8px;" (click)="applyFilters()">Apply Filters</button>
+  <button mat-button style="color: white; margin-left: 15px;"  (click)="clearFilters()">Clear Filters</button>
+</div>
+
+<!-- Car List -->
+<div class="car-list">
+  <mat-card *ngFor="let car of filteredCars" class="car-card">
+    <img [src]="car.image" alt="Car Image" class="car-image"/>
+    <mat-card-content>
+      <p><strong>Car Id:</strong>{{car.car_ID}}</p>
+      <p><strong>Brand:</strong> {{ car.brand}}</p>
+
+      <p><strong>Model:</strong> {{car.model}}</p>
+      <p><strong>Category:</strong> {{ car.category }}</p>
+      <p><strong>Location:</strong> {{ car.location }}</p>
+      <p><strong>Price per day:</strong> ${{ car.pricePerDay }}</p>
+      <button mat-button color="primary" (click)=openBookingForm(car)>Book Now</button>
+    </mat-card-content>
+  </mat-card>
+</div>

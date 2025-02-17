@@ -1,0 +1,135 @@
+<div class="container">
+  <h2 class="heading">Booking Management</h2>
+  <div class="add-form">
+    <h3>Add New Booking</h3>
+    <form (ngSubmit)="addBooking()">
+      <div class="input-group">
+        <label>User ID:</label>
+        <input type="number" [(ngModel)]="newBooking.user_ID" name="user_ID" required />
+      </div>
+  
+      <div class="input-group">
+        <label>User Name:</label>
+        <input type="text" [(ngModel)]="newBooking.userName" name="userName" required />
+      </div>
+  
+      <div class="input-group">
+        <label>Car ID:</label>
+        <input type="number" [(ngModel)]="newBooking.car_ID" name="car_ID" required />
+      </div>
+  
+      <div class="input-group">
+        <label>Car Name:</label>
+        <input type="text" [(ngModel)]="newBooking.carDetails" name="carDetails" required />
+      </div>
+  
+      <div class="input-group">
+        <label>Booking Date:</label>
+        <input type="date" [(ngModel)]="newBooking.bookingDate" [min]="minDate" name="bookingDate" required />
+      </div>
+  
+      <div class="input-group">
+        <label>Pickup Date:</label>
+        <input type="date" [(ngModel)]="newBooking.pickupDate" [min]="minDate" (change)="updateReturnMinDate()" name="pickupDate" required />
+      </div>
+  
+      <div class="input-group">
+        <label>Return Date:</label>
+        <input type="date" [(ngModel)]="newBooking.returnDate" [min]="returnMinDate" name="returnDate" required />
+      </div>
+  
+      <div class="input-group">
+        <label>Total Price:</label>
+        <input type="number" [(ngModel)]="newBooking.totalPrice" name="totalPrice" required />
+      </div>
+  
+      <button type="submit" class="btn">Add Booking</button>
+      <button type="button" class="cancel-btn" (click)="resetForm()">Cancel</button>
+    </form>
+  </div>
+  
+  
+ 
+
+  <!-- ✅ Booking List -->
+  <h3 class="heading">All Bookings</h3>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Booking ID</th>
+          <th>User ID</th>
+          <th>UserName</th>
+          <th>Car ID</th>
+          <th>Car Name</th>
+          <th>Booking Date</th>
+          <th>Pickup Date</th>
+          <th>Return Date</th>
+          <th>Total Price</th>
+          
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.id }}</td>
+          <td>{{ booking.user_ID }}</td>
+          <td>{{ booking.userName }}</td>
+          <td>{{ booking.car_ID }}</td>
+          <td>{{booking.carDetails}}</td>
+          <td>{{ booking.bookingDate }}</td>
+          <td>{{ booking.pickupDate }}</td>
+          <td>{{ booking.returnDate }}</td>
+          <td>{{booking.totalPrice}}</td>
+          
+          <td>
+            <button class="edit-btn" (click)="editBooking(booking)">Edit</button>
+            <button class="delete-btn" (click)="deleteBooking(booking.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- //✅ Edit Booking Form (if selected) -->
+  <div *ngIf="selectedBooking" class="edit-form">
+    <h3>Edit Booking</h3>
+    <form (ngSubmit)="updateBooking()">
+      <div class="input-group">
+        <label>User ID:</label>
+        <input type="number" [(ngModel)]="selectedBooking.user_ID" name="user_ID" required />
+      </div>
+      <div class="input-group">
+        <label>UserName:</label>
+        <input type="text" [(ngModel)]="selectedBooking.userName" name="userName" required />
+      </div>
+      <div class="input-group">
+        <label>Car ID:</label>
+        <input type="number" [(ngModel)]="selectedBooking.car_ID" name="car_ID" required />
+      </div>
+      <div class="input-group">
+        <label>Car Name:</label>
+        <input type="text" [(ngModel)]="selectedBooking.carDetails" name="carDetails" required />
+      </div>
+      <div class="input-group">
+        <label>Booking Date:</label>
+        <input type="date" [(ngModel)]="selectedBooking.bookingDate" [min]="minDate" name="bookingDate" required />
+      </div>
+      <div class="input-group">
+        <label>Pickup Date:</label>
+        <input type="date" [(ngModel)]="selectedBooking.pickupDate" [min]="minDate" (change)="updateReturnMinDate()" name="pickupDate" required />
+      </div>
+      <div class="input-group">
+        <label>Return Date:</label>
+        <input type="date" [(ngModel)]="selectedBooking.returnDate" [min]="returnMinDate"  name="returnDate" required />
+      </div>
+      <div class="input-group">
+        <label>Total Price:</label>
+        <input type="number" [(ngModel)]="selectedBooking.totalPrice" name="totalPrice" required />
+      </div>
+      
+      <button type="submit" class="btn">Update Booking</button>
+      <button type="button" class="cancel-btn" (click)="selectedBooking = null">Cancel</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,127 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">🚗 Car Management System</h2>
+
+  <!-- Add New Car Section -->
+  <div class="card shadow p-4 mb-4">
+    <h3 class="mb-3">➕ Add New Car</h3>
+    <form (submit)="onAddCar()" class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Brand:</label>
+        <input type="text" class="form-control" [(ngModel)]="newCar.brand" name="brand" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Model:</label>
+        <input type="text" class="form-control" [(ngModel)]="newCar.model" name="model" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Year:</label>
+        <input type="number" class="form-control" [(ngModel)]="newCar.year" name="year" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">License Plate:</label>
+        <input type="text" class="form-control" [(ngModel)]="newCar.license_Plate" name="license_Plate" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Availability:</label>
+        <select class="form-select" [(ngModel)]="newCar.availability_Status" name="availability_Status" required>
+          <option value="Available">Available</option>
+          <option value="Booked">Booked</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Category:</label>
+        <input type="text" class="form-control" [(ngModel)]="newCar.category" name="category" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Location:</label>
+        <input type="text" class="form-control" [(ngModel)]="newCar.location" name="location" required />
+      </div>
+      <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-success px-4 mt-3">Add Car</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Car List Section -->
+  <div class="card shadow p-4">
+    <h3 class="mb-3">📋 Car List</h3>
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Year</th>
+          <th>License Plate</th>
+          <th>Category</th>
+          <th>Location</th>
+          <th>Availability</th>
+          
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of cars">
+          <td>{{ car.car_ID }}</td>
+          <td>{{ car.brand }}</td>
+          <td>{{ car.model }}</td>
+          <td>{{ car.year }}</td>
+          <td>{{ car.license_Plate }}</td>
+          
+          <td>{{car.category}}</td>
+          <td>{{car.location}}</td>
+          <td>
+            <span class="badge bg-success" *ngIf="car.availability_Status === 'Available'">Available</span>
+            <span class="badge bg-danger" *ngIf="car.availability_Status === 'Booked'">Booked</span>
+          </td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="onEditCar(car)">✏️ Edit</button>
+            <button *ngIf="car.car_ID !== undefined" class="btn btn-danger btn-sm ms-2" (click)="onDeleteCar(car.car_ID)">🗑️ Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Edit Car Form (Only Visible When Editing) -->
+  <div class="card shadow p-4 mt-4" *ngIf="selectedCar">
+    <h3 class="mb-3">✍️ Edit Car</h3>
+    <form (submit)="onUpdateCar()" class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Brand:</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedCar.brand" name="brand" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Model:</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedCar.model" name="model" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Year:</label>
+        <input type="number" class="form-control" [(ngModel)]="selectedCar.year" name="year" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">License Plate:</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedCar.license_Plate" name="license_Plate" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Availability:</label>
+        <select class="form-select" [(ngModel)]="selectedCar.availability_Status" name="availability_Status" required>
+          <option value="Available">Available</option>
+          <option value="Booked">Booked</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Category:</label>
+        <input type="text" class="form-control" [(ngModel)]="newCar.category" name="category" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Location:</label>
+        <input type="text" class="form-control" [(ngModel)]="newCar.location" name="location" required />
+      </div>
+      <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-primary px-4">Update Car</button>
+        <button type="button" class="btn btn-secondary px-4 ms-2" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
